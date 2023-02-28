@@ -2,8 +2,12 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import storage from 'redux-persist/lib/storage';
 import { persistReducer} from 'redux-persist'
-import { all } from 'redux-saga/effects';
+import { all, fork } from "redux-saga/effects";
 import chatGPTreducer from './chatGPT/chatGPTSlice'
+
+// 사가 관리
+
+
 
 const rootReducer = combineReducers({
     chatGPT: chatGPTreducer

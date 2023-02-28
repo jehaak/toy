@@ -27,7 +27,9 @@ const chatGPTSlice = createSlice({
 
     // 답변 삭제
     deleteResponse: (state, action) => {
-      state.chatResponse.splice(action.payload, action.payload+1)
+      if (state.chatResponse) {
+        state.chatResponse.pop()
+      }
     }
   }
 })
